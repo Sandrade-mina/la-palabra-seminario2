@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>jugar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="small">Nivel: {{nivel.name}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <app-fila *ngFor="let item of numfiles; index as i" [palabra]="palabra" [letras]="letras" [codigo]="i" [v_enviar]="v_enviar" (gol)="comp($event)"></app-fila>
+    <ion-button color="primary" (click)="enviar()">Enviar</ion-button>
+    <ion-button color="medium" (click)="volver()">Volver</ion-button>
+  </ion-content>
+</ion-content>
